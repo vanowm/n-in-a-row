@@ -9,7 +9,7 @@
   "name": "Launch Edge",
   "request": "launch",
   "type": "pwa-msedge",
-  "url": "https://vano.org/experiments/${workspaceFolderBasename}/",
+  "url": "https://vano.org/experiments/row/${workspaceFolderBasename}/",
   "webRoot": "${workspaceFolder}",
   "outputCapture": "console",
   "console": "internalConsole",
