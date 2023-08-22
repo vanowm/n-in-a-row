@@ -1,0 +1,10 @@
+{
+  "jshint.options": {
+    "asi": false
+  },
+  "cSpell.words": [
+    "browserslist",
+    "navIcon"
+  ],
+  "editor.wordWrap": "on"
+}

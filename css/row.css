@@ -255,7 +255,7 @@ input#main-menu:not(:checked) ~ * .main-menu div.menu {
   opacity: 1;
 }
 
-.navicon {
+.navIcon {
   background-color: var(--textColor);
   display: block;
   height: 0.1em;
@@ -267,11 +267,11 @@ input#main-menu:not(:checked) ~ * .main-menu div.menu {
   transition: background-color 0.3s;
 }
 
-.navicon:before {
+.navIcon:before {
   top: 0.5em;
 }
 
-.navicon:after {
+.navIcon:after {
   top: -0.5em;
 }
 
@@ -280,28 +280,28 @@ input#main-menu:not(:checked) ~ * .main-menu div.menu {
   right: 0.4em;
 }
 
-#main-menu:checked ~ * .main-menu * .navicon {
+#main-menu:checked ~ * .main-menu * .navIcon {
   background-color: transparent;
   width: 70%;
   transition: top 0.1s ease, right 0.1s ease;
 }
 
-#main-menu:checked ~ * .main-menu * .navicon:before {
+#main-menu:checked ~ * .main-menu * .navIcon:before {
   background-color: MenuText;
   transform: rotate(-135deg);
   top: 0;
   right: 0;
 }
 
-#main-menu:checked ~ * .main-menu * .navicon:after {
+#main-menu:checked ~ * .main-menu * .navIcon:after {
   background-color: MenuText;
   transform: rotate(135deg);
   top: 0;
   right: 0;
 }
 
-.navicon:before,
-.navicon:after {
+.navIcon:before,
+.navIcon:after {
   background-color: var(--textColor);
   display: block;
   width: 100%;
@@ -311,8 +311,8 @@ input#main-menu:not(:checked) ~ * .main-menu div.menu {
   transition: top 0.1s ease, right 0.1s ease, transform 0.3s ease;
 }
 
-#main-menu:checked ~ * .main-menu * .navicon:before,
-#main-menu:checked ~ * .main-menu * .navicon:after {
+#main-menu:checked ~ * .main-menu * .navIcon:before,
+#main-menu:checked ~ * .main-menu * .navIcon:after {
   transition: top 0.1s ease-out, right 0.1s ease, transform 0.3s ease-out;
 }
 
@@ -365,35 +365,84 @@ body[data-player="3"] .players > :nth-child(4),
   border-radius: 100%;
   display: inline-block;
   margin: 0.1em;
-  transition: width 0.5s, height 0.5s;
+  font-size: 1em;
+  line-height: 1em;
 }
-
+#board > * > *,
+body[data-player="0"] .players > :nth-child(1)::after,
+body[data-player="1"] .players > :nth-child(2)::after,
+body[data-player="2"] .players > :nth-child(3)::after,
+body[data-player="3"] .players > :nth-child(4)::after
+{
+  font-size: 1em;
+  line-height: 2em;
+}
 .players > *
 {
-  /* margin: 1em; */
-  /* padding: 1em; */
   width: 1em;
   height: 1em;
+  font-size: 1em;
   display: none;
+  transition: all 0.5s;
+}
+.players > *::after
+{
+  line-height: 1em;
+  font-size: 0.5em;
+}
+
+.players > :nth-child(1)::after,
+.players > :nth-child(2)::after,
+.players > :nth-child(3)::after,
+.players > :nth-child(4)::after,
+.player0::after,
+.player1::after,
+.player2::after,
+.player3::after
+{
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+}
+.players > :nth-child(1)::after,
+.player0::after
+{
+  content: "1";
+  color: white;
 }
 .players > :nth-child(1),
 .player0
 {
   background-color: black;
 }
-
+.players > :nth-child(2)::after,
+.player1::after
+{
+  content: "2";
+}
 .players > :nth-child(2),
 .player1
 {
   background-color: red;
 }
 
+.players > :nth-child(3)::after,
+.player2::after
+{
+  content: "3";
+}
 .players > :nth-child(3),
 .player2
 {
   background-color: #227fe9;
 }
 
+.players > :nth-child(4)::after,
+.player3::after
+{
+  content: "4";
+}
 .players > :nth-child(4),
 .player3
 {
@@ -420,7 +469,7 @@ body.playerBot3 .players > :nth-child(4)
 }
 
 
-body:not(.finished) #board > *:hover
+body:not(.finished):not(.bot) #board > *:hover
 {
   background-color: #eeeeee;
 }

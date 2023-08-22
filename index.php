@@ -48,7 +48,7 @@
         </div>
       </div>
       <label for="main-menu" class="menu-icon" title="Menu">
-        <span class="navicon" aria-label="Hamburger menu 'icon'"></span>
+        <span class="navIcon" aria-label="Hamburger menu 'icon'"></span>
       </label>
     </nav>
   </header>
@@ -57,7 +57,7 @@
     <div id="board"></div>
     <button onclick="init()">reset</button>
   </main>
-
+<footer><div id="avg"></div></footer>
   <script type="text/javascript" src="<?=getfile("js/row.js")?>"></script>
 </body>
 
